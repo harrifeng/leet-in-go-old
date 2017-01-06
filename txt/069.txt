@@ -1,0 +1,5 @@
+69. Sqrt(x)   QuestionEditorial Solution
+Difficulty: Medium
+Implement int sqrt(int x).
+
+Compute and return the square root of x.
