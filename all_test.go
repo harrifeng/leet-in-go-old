@@ -15,7 +15,7 @@ func Test_twoSum(t *testing.T) {
 		args args
 		want []int
 	}{
-		{"001 two sum", args{[]int{1, 2}, 3}, []int{1, 2}},
+		{"001 two sum", args{[]int{2, 7, 11, 15}, 9}, []int{0, 1}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
