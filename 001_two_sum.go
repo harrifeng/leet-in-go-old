@@ -1,7 +1,7 @@
 package leetcode
 
 func twoSum(nums []int, target int) []int {
-	m := make(map[int]int)
+	m := map[int]int{}
 
 	for i, c := range nums {
 		if val, ok := m[target-c]; ok {
