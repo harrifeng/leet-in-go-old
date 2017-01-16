@@ -46,3 +46,26 @@ func Test_addTwoNumbers(t *testing.T) {
 		})
 	}
 }
+
+func Test_climbStairs(t *testing.T) {
+	type args struct {
+		n int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{"070 climbing stairs", args{3}, 3},
+		{"070 climbing stairs", args{18}, 4181},
+		{"070 climbing stairs", args{99}, 3736710778780434371},
+		{"070 climbing stairs", args{1000}, 9079565065540428013},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := climbStairs(tt.args.n); got != tt.want {
+				t.Errorf("climbStairs() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
