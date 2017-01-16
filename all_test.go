@@ -57,9 +57,7 @@ func Test_climbStairs(t *testing.T) {
 		want int
 	}{
 		{"070 climbing stairs", args{3}, 3},
-		{"070 climbing stairs", args{18}, 4181},
-		{"070 climbing stairs", args{99}, 3736710778780434371},
-		{"070 climbing stairs", args{1000}, 9079565065540428013},
+		{"070 climbing stairs", args{45}, 1836311903},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
