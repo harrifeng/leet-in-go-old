@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// 001_two_sum
 func Test_twoSum(t *testing.T) {
 	type args struct {
 		nums   []int
@@ -15,7 +16,7 @@ func Test_twoSum(t *testing.T) {
 		args args
 		want []int
 	}{
-		{"001 two sum", args{[]int{2, 7, 11, 15}, 9}, []int{0, 1}},
+		{"", args{[]int{2, 7, 11, 15}, 9}, []int{0, 1}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -26,6 +27,7 @@ func Test_twoSum(t *testing.T) {
 	}
 }
 
+// 002_add_two_numbers
 func Test_addTwoNumbers(t *testing.T) {
 	type args struct {
 		l1 *ListNode
@@ -36,7 +38,7 @@ func Test_addTwoNumbers(t *testing.T) {
 		args args
 		want *ListNode
 	}{
-		{"002 add two numbers", args{&ListNode{1, nil}, &ListNode{2, nil}}, &ListNode{3, nil}},
+		{"", args{&ListNode{1, nil}, &ListNode{2, nil}}, &ListNode{3, nil}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -47,6 +49,7 @@ func Test_addTwoNumbers(t *testing.T) {
 	}
 }
 
+// 007_climbing_stairs
 func Test_climbStairs(t *testing.T) {
 	type args struct {
 		n int
@@ -56,10 +59,10 @@ func Test_climbStairs(t *testing.T) {
 		args args
 		want int
 	}{
-		{"070 climbing stairs", args{3}, 3},
-		{"070 climbing stairs", args{18}, 4181},
-		{"070 climbing stairs", args{99}, 3736710778780434371},
-		{"070 climbing stairs", args{1000}, 9079565065540428013},
+		{"", args{3}, 3},
+		{"", args{18}, 4181},
+		{"", args{99}, 3736710778780434371},
+		{"Very large example", args{1000}, 9079565065540428013},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
