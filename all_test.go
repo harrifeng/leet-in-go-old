@@ -38,11 +38,12 @@ func Test_addTwoNumbers(t *testing.T) {
 		args args
 		want *ListNode
 	}{
-		{"", args{&ListNode{1, nil}, &ListNode{2, nil}}, &ListNode{3, nil}},
+		{"", args{NewList(1, 2, 3), NewList(1, 2, 3)}, NewList(2, 4, 6)},
+		{"", args{NewList(2, 4, 3), NewList(5, 6, 4)}, NewList(7, 0, 8)},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := addTwoNumbers(tt.args.l1, tt.args.l2); !reflect.DeepEqual(got, tt.want) {
+			if got := addTwoNumbers(tt.args.l1, tt.args.l2); !got.EqualsTo(tt.want) {
 				t.Errorf("addTwoNumbers() = %v, want %v", got, tt.want)
 			}
 		})
