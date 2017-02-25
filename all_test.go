@@ -96,6 +96,30 @@ func Test_findMedianSortedArrays(t *testing.T) {
 	}
 }
 
+// 005_longest_palindromic_substring
+func Test_longestPalindrome(t *testing.T) {
+	type args struct {
+		s string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{"", args{"abccbea"}, "bccb"},
+		{"", args{"ccd"}, "cc"},
+		{"", args{"abb"}, "bb"},
+		{"", args{"aaabaaaa"}, "aaabaaa"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := longestPalindrome(tt.args.s); got != tt.want {
+				t.Errorf("longestPalindrome() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 // 070_climbing_stairs
 func Test_climbStairs(t *testing.T) {
 	type args struct {
