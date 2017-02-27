@@ -120,6 +120,31 @@ func Test_longestPalindrome(t *testing.T) {
 	}
 }
 
+// 006_zigzag
+func Test_convert(t *testing.T) {
+	type args struct {
+		s       string
+		numRows int
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		// TODO: Add test cases.
+		{"", args{"PAYPALISHIRING", 3}, "PAHNAPLSIIGYIR"},
+		{"", args{"A", 1}, "A"},
+		{"", args{"", 2}, ""},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := convert(tt.args.s, tt.args.numRows); got != tt.want {
+				t.Errorf("convert() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 // 070_climbing_stairs
 func Test_climbStairs(t *testing.T) {
 	type args struct {
