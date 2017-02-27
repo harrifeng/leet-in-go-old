@@ -6,7 +6,7 @@ import (
 )
 
 func longestPalindrome(s string) string {
-	ns := "^" + strings.Join(strings.Split(s, ""), "#") + "$"
+	ns := "^#" + strings.Join(strings.Split(s, ""), "#") + "#$"
 	cnt := [3000]int{}
 
 	tmpi_c := 0
@@ -38,5 +38,5 @@ func longestPalindrome(s string) string {
 		}
 	}
 
-	return s[maxi/2-maxv/2 : maxi/2-maxv/2+1]
+	return s[maxi/2-maxv/2 : maxi/2-maxv/2+maxv-1]
 }
