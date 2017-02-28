@@ -1,8 +1,6 @@
 package leetcode
 
-import (
-	"strings"
-)
+import "bytes"
 
 func convert(s string, numRows int) string {
 
@@ -10,17 +8,21 @@ func convert(s string, numRows int) string {
 		return s
 	}
 
-	ret := [10]string{}
+	ret := [1000]bytes.Buffer{}
 	size := 2*numRows - 2
 
 	for i, c := range s {
 		cur := i % size
 		if cur < numRows {
-			ret[cur] += string(c)
+			ret[cur].WriteRune(c)
 		} else {
-			ret[size-cur] += string(c)
+			ret[size-cur].WriteRune(c)
 		}
 	}
 
-	return strings.Join(ret[:numRows+1], "")
+	for i := 1; i < numRows; i++ {
+		ret[0].WriteString(ret[i].String())
+	}
+
+	return ret[0].String()
 }
