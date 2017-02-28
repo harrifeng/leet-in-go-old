@@ -8,7 +8,7 @@ func convert(s string, numRows int) string {
 		return s
 	}
 
-	ret := [1000]bytes.Buffer{}
+	ret := make([]bytes.Buffer, numRows)
 	size := 2*numRows - 2
 
 	for i, c := range s {
