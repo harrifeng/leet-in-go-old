@@ -7,7 +7,7 @@ import (
 
 func longestPalindrome(s string) string {
 	ns := "^#" + strings.Join(strings.Split(s, ""), "#") + "#$"
-	cnt := [3000]int{}
+	cnt := make([]int, len(ns))
 
 	tmpi := 0
 	tmpiCenter := 0
