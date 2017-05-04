@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"math"
 	"reflect"
 	"testing"
 )
@@ -140,6 +141,30 @@ func Test_convert(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := convert(tt.args.s, tt.args.numRows); got != tt.want {
 				t.Errorf("convert() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+// 007_reverse_integer
+func Test_reverse(t *testing.T) {
+	type args struct {
+		x int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		// TODO: Add test cases.
+		{"", args{123}, 321},
+		{"", args{-123}, -321},
+		{"", args{int(math.Pow(2, 31))}, 0},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := reverse(tt.args.x); got != tt.want {
+				t.Errorf("reverse() = %v, want %v", got, tt.want)
 			}
 		})
 	}
